@@ -1,0 +1,33 @@
+services:
+  loans:
+    image: gauravpant734/loans
+    ports:
+      - "9501:9501"
+    networks:
+      - bank-network
+  Accounts:
+    image: gauravpant734/accounts
+    ports:
+      - "9503:9503"
+    networks:
+      - bank-network
+  cards:
+    image: gauravpant734/cards
+    ports:
+      - "8083:8083"
+    networks:
+      - bank-network
+  Insurance:
+    image: gauravpant734/insurance
+    ports:
+      - "9507:9507"
+    networks:
+      - bank-network
+  Config:
+    image: gauravpant734/config
+    ports:
+      - "8087:8087"
+    networks:
+      - bank-network       
+networks:
+  bank-network: {}
